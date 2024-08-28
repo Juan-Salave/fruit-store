@@ -93,14 +93,14 @@ for ( let i = 0; i < productosFruta.length; i++){
     divCardBody.appendChild(nombreFruta);
 
     const button = document.createElement('button');
-    button.classList = 'btn btn-warning btn-sm mt-2';
+    button.classList = 'btn btn-dark btn-sm mt-2';
     button.textContent = 'Añadir al carrito'
     divCardBody.appendChild(button);
     button.addEventListener('mouseenter',() => {
-        button.classList = 'btn btn-light m-0 mt-2';
+        button.classList = 'btn btn-warning btn-sm m-0 mt-2';
     })
     button.addEventListener('mouseout',() => {
-        button.classList = 'btn btn-warning btn-sm m-0 mt-2';
+        button.classList = 'btn btn-dark btn-sm m-0 mt-2';
     })
     button.addEventListener('click', () => {
         agregar(productosFruta[i]);
