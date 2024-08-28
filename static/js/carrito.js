@@ -2,7 +2,7 @@ const body = document.querySelector('body');
 body.classList = 'bg-dark'
 
 const titulo = document.querySelector('title');
-titulo.textContent = 'Cart Fruit Store'
+titulo.textContent = 'Carrito Fruit Store'
 
 const pagCarrito = document.querySelector('#carrito');
 
