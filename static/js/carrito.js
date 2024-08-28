@@ -68,11 +68,6 @@ for ( let c = 0; c < carrito.length; c++){
     hTres.classList = 'card-title text-center mt-2 '
     hTres.textContent = `${carrito[c].nombre} = $${carrito[c].precio}`;
     divCinco.appendChild(hTres);
-    
-    // const hCuatro = document.createElement('h3');
-    // hCuatro.classList = 'card-title text-center mb-2'
-    // hCuatro.textContent = carrito[c].precio;
-    // divCinco.appendChild(hCuatro);
 
     const botonBorrar = document.createElement('button');
     botonBorrar.classList = 'btn col-12 btn-sm mt-s1 bg-dark text-warning';
@@ -80,10 +75,21 @@ for ( let c = 0; c < carrito.length; c++){
     divCinco.appendChild(botonBorrar);
     botonBorrar.addEventListener('click', () => {
         eliminarFruta(carrito[c]);
+        location.reload();
     })
     function eliminarFruta( id ){
         carrito.splice(c, 1)
-        localStorage.setItem('Carrito', JSON.stringify(carrito));
-        location.reload();
+        localStorage.setItem('Carrito', JSON.stringify(carrito));        
     }
 }
+
+
+const divFooter = document.createElement('div');
+divFooter.classList = 'bg-warrning mt-5'
+pagCarrito.appendChild(divFooter)
+
+const parrafoFooter = document.createElement('p');
+let anio = new Date().getFullYear()
+parrafoFooter.textContent = `Juan Miguel Salave todos los derechos reservados ${anio}`
+divFooter.classList = 'text-center text-bg-warning bg-gradient pt-3 p-1 mt-5'
+divFooter.appendChild(parrafoFooter)

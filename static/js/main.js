@@ -91,11 +91,6 @@ for ( let i = 0; i < productosFruta.length; i++){
     nombreFruta.classList = 'card-title m-0';
     nombreFruta.textContent = `${productosFruta[i].nombre} = $${productosFruta[i].precio}`;
     divCardBody.appendChild(nombreFruta);
-    
-    // const precio = document.createElement('h5');
-    // precio.classList = 'card-title text-warning m-';
-    // precio.textContent = '$'+ productosFruta[i].precio;
-    // divCardBody.appendChild(precio);
 
     const button = document.createElement('button');
     button.classList = 'btn btn-warning btn-sm mt-2';
@@ -109,11 +104,28 @@ for ( let i = 0; i < productosFruta.length; i++){
     })
     button.addEventListener('click', () => {
         agregar(productosFruta[i]);
+        Toastify({
+            text: `Se agrego ${productosFruta[i].nombre}`,
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #96c93d, #96c93d)",
+            }
+        }).showToast();
     })
-
+// `Se agrego ${productosFruta[i].nombre}`
     const agregar = (producto) => {
         carritoCompras.push(productosFruta[i]);
-
         localStorage.setItem('Carrito', JSON.stringify(carritoCompras));
+        
     }
 }
+
+const divFooter = document.createElement('div');
+divFooter.classList = 'bg-warrning'
+global.appendChild(divFooter)
+
+const parrafoFooter = document.createElement('p');
+let anio = new Date().getFullYear()
+parrafoFooter.textContent = `Juan Miguel Salave todos los derechos reservados ${anio}`
+divFooter.classList = 'text-center text-bg-warning bg-gradient pt-3 p-1'
+divFooter.appendChild(parrafoFooter)

@@ -94,3 +94,14 @@ const spanPrecioTotal = document.createElement('span');
 spanPrecioTotal.classList = 'h3 text-dark mt-2';
 spanPrecioTotal.textContent = `$ ${total}`
 liTotal.appendChild(spanPrecioTotal);
+
+
+const divFooter = document.createElement('div');
+divFooter.classList = 'bg-warrning mt-5'
+pagPagar.appendChild(divFooter)
+
+const parrafoFooter = document.createElement('p');
+let anio = new Date().getFullYear()
+parrafoFooter.textContent = `Juan Miguel Salave todos los derechos reservados ${anio}`
+divFooter.classList = 'text-center text-bg-warning bg-gradient pt-3 p-1 mt-5'
+divFooter.appendChild(parrafoFooter)
